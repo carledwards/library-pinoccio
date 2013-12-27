@@ -175,6 +175,8 @@ void setup(void) {
 
   addBitlashFunction("backpack.report", (bitlash_function) backpackReport);
 
+  addBitlashFunction("test.multiline", (bitlash_function) testMultiline);
+
   addBitlashFunction("scout.report", (bitlash_function) scoutReport);
   addBitlashFunction("scout.isleadscout", (bitlash_function) isScoutLeadScout);
   addBitlashFunction("scout.sethqtoken", (bitlash_function) setHQToken);
@@ -1045,6 +1047,21 @@ numvar otaBoot(void) {
   cli();
   wdt_enable(WDTO_15MS);
   while(1);
+}
+
+// Function to test multiline output
+numvar testMultiline(void) {
+  Serial.println("I am");
+  delay(200);
+  Serial.println("the very");
+  delay(200);
+  Serial.println("model of");
+  delay(200);
+  Serial.println("a modern");
+  delay(200);
+  Serial.println("major general.");
+  delay(200);
+  Serial.print("I've information\nvegetable\nanimal\nand mineral\n");
 }
 
 /****************************\
